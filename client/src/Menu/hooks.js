@@ -3,11 +3,11 @@ import useAxios from "axios-hooks";
 
 export const useMenu = () => {
   const [{ data, loading }, handleRequest] = useAxios(
-    process.env.REACT_APP_API_URL
+    `${process.env.REACT_APP_API_URL}/api/menu`
   );
   useEffect(() => handleRequest(), [handleRequest]);
   return {
-    rows: data,
+    rows: data || [],
     isLoading: loading
   };
 };

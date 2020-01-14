@@ -1,0 +1,23 @@
+service: express-demo
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 3001
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, "dev"}
+  region: ${opt:region, "ca-central-1"}
+
+functions:
+  menu:
+    handler: src/index.handler
+    events:
+      - http:
+          path: /api/menu
+          method: GET
+          cors: true
