@@ -5,7 +5,7 @@ export const useMenu = () => {
   const [{ data, loading }, handleRequest] = useAxios(
     `${process.env.REACT_APP_API_URL}/api/menu`
   );
-  useEffect(() => handleRequest(), [handleRequest]);
+  useEffect(() => void handleRequest(), [handleRequest]);
   return {
     rows: data || [],
     isLoading: loading

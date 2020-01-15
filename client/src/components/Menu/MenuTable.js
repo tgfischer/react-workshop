@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import {
   Table,
   TableHead,
@@ -36,3 +36,16 @@ export const MenuTable = ({ rows }) => (
     </Table>
   </TableContainer>
 );
+
+MenuTable.propTypes = {
+  rows: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      calories: PropTypes.number.isRequired,
+      fat: PropTypes.number.isRequired,
+      carbs: PropTypes.number.isRequired,
+      protein: PropTypes.number.isRequired
+    }).isRequired
+  ).isRequired
+};
