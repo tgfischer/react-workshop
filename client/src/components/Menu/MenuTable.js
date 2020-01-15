@@ -7,37 +7,58 @@ import {
   TableRow,
   TableCell,
   TableContainer,
+  TableSortLabel,
   Paper
 } from "@material-ui/core";
 
-export const MenuTable = ({ rows }) => (
-  <TableContainer component={Paper}>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>Dessert (100g serving)</TableCell>
-          <TableCell>Calories</TableCell>
-          <TableCell>Fat (g)</TableCell>
-          <TableCell>Carbs (g)</TableCell>
-          <TableCell>Protein (g)</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {rows.map(({ id, name, calories, fat, carbs, protein }) => (
-          <TableRow key={id}>
-            <TableCell>{name}</TableCell>
-            <TableCell>{calories}</TableCell>
-            <TableCell>{fat}</TableCell>
-            <TableCell>{carbs}</TableCell>
-            <TableCell>{protein}</TableCell>
+import { useMenuTable } from "./hooks";
+
+export const MenuTable = ({ columns, ...props }) => {
+  const { rows, orderBy, direction, handleSort } = useMenuTable(props);
+  return (
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            {columns.map(({ id, name }) => (
+              <TableCell
+                key={id}
+                sortDirection={orderBy === id ? direction : false}
+              >
+                <TableSortLabel
+                  active={orderBy === id}
+                  direction={orderBy === id ? direction : "asc"}
+                  onClick={handleSort(id)}
+                >
+                  {name}
+                </TableSortLabel>
+              </TableCell>
+            ))}
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </TableContainer>
-);
+        </TableHead>
+        <TableBody>
+          {rows.map(({ id, name, calories, fat, carbs, protein }) => (
+            <TableRow key={id}>
+              <TableCell>{name}</TableCell>
+              <TableCell>{calories}</TableCell>
+              <TableCell>{fat}</TableCell>
+              <TableCell>{carbs}</TableCell>
+              <TableCell>{protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+};
 
 MenuTable.propTypes = {
+  columns: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired
+    }).isRequired
+  ).isRequired,
   rows: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
