@@ -2,6 +2,10 @@
 
 Writing modern front end web applications in React
 
+# About
+
+This workshop will go over some of the fundamentals for writing React applications
+
 # Getting started
 
 ## Requirements
@@ -28,10 +32,51 @@ Writing modern front end web applications in React
 
 ## Running the development environment
 
+There are two options for running this app. Both will start the front end on port `3000`, and the back end on port `3001`
+
+### Build tasks
+
 1. In VS Code, press `Ctrl+Shift+b` to open the list of build tasks
 2. Select `Run Dev Env` from the list of options
 3. This will open a split paned terminal in VS code that runs both the front end and back end
-4. This will also open a new tab in your browser pointing to http://localhost:3000. If you are running this remotely, navigate to http://your-public-ip:3000 to view the site
+
+### Manually
+
+1. Open up two terminals.
+2. In the first one, navigate to the `client` folder and run `npm run start`
+   ```
+   cd ./client
+   npm run start
+   ```
+3. In the second, navigate to the `server` folder, and run `npx serverless offline`
+   ```
+   cd ./server
+   npx serverless offline
+   ```
+
+# Architecture
+
+## Lerna
+
+The core of the project is managed by [a tool called Lerna](https://github.com/lerna/lerna). It allows you to split up your projects into multiple packages, and manages the dependencies for them.
+
+In this case, we are using it to install the packages for both the front end and back end with the `bootstrap` command
+
+```
+npx lerna bootstrap
+```
+
+The settings for Lerna are stored in the `lerna.json` file in the root of the project
+
+## Client
+
+The client is the part we care about for this workshop. The project was generated using Facebook's own [Create React App](https://github.com/facebook/create-react-app) tool. I modified the default folder structure a bit for the components. I added Prettier to the ESLint config, which auto formats the code to keep a consistent style across developers.
+
+Create React App uses a package called `react-script` that encapsulates all of the Webpack and ESLint configuration. If you need to modify the Webpack configuration, you can eject the application, but that is irreversible. Once you eject, the onus is on you for managing upgrades and configuration for your app
+
+## Server
+
+The server is a simple NodeJS Express server. It only has one route that returns a static list to be displayed. We won't be going in depth with this part of the code
 
 # Directory structure
 

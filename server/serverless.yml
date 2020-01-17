@@ -1,4 +1,4 @@
-service: express-demo
+service: react-workshop-server
 
 plugins:
   - serverless-offline

@@ -8,8 +8,13 @@ import styled from "styled-components";
  *
  * You provide styled-components a component or HTML element
  * (e.g. styled.div`...`;), and attach any styles that you want
- * in it. This type of styling can be powerful for theming and
- * conditional styling (amoung other things)
+ * in it.
+ *
+ * This type of styling can be powerful for theming and
+ * conditional styling (amoung other things). For example,
+ * you could do something like this:
+ *
+ * background: ${({ theme }) => theme.main}
  */
 export const StyledGrid = styled(Grid)`
   height: 100vh;

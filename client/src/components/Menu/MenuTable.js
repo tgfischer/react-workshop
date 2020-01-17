@@ -13,7 +13,7 @@ import {
 
 import { useMenuTable } from "./hooks";
 
-export const MenuTable = ({ columns, ...props }) => {
+const MenuTable = ({ columns, ...props }) => {
   const { rows, orderBy, direction, handleSort } = useMenuTable(props);
   return (
     <TableContainer component={Paper}>
@@ -70,3 +70,5 @@ MenuTable.propTypes = {
     }).isRequired
   ).isRequired
 };
+
+export default MenuTable;
