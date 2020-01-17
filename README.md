@@ -23,7 +23,7 @@ This workshop will go over some of the fundamentals for writing React applicatio
 1. Clone from from https://gerrit/admin/repos/react-workshop-kickoff-2020
 2. Open the folder in VS Code
 3. Press `` Ctrl+Shift+` `` to open a new terminal
-4. In the terminal, enter the command
+4. In the terminal, **navigate to the root of the project**, and enter the command
    ```
    npm install
    npx lerna bootstrap
