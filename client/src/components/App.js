@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 /**
@@ -13,15 +13,15 @@ import Menu from "./Menu";
  * Things like resetting the default CSS (see <CssBaseline />),
  * and rendering the core of our application
  *
- * Note: The <> is the same as <Fragment>
+ * <StrictMode> is encouraged to enforce best practices
  */
 const App = () => (
-  <>
+  <StrictMode>
     <CssBaseline />
     <Page>
       <Menu />
     </Page>
-  </>
+  </StrictMode>
 );
 
 export default App;
