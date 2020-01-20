@@ -1,3 +1,7 @@
-export const useMenu = () => {};
+export const useMenu = () => {
+  return {};
+};
 
-export const useMenuTable = () => {};
+export const useMenuTable = () => {
+  return {};
+};

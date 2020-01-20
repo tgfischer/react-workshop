@@ -20,7 +20,7 @@ const LazyMenuTable = lazy(() => import("./MenuTable"));
  * all of the properties of the returned object from
  * useMenu directly to <MenuTable /> as props
  *
- * LazyMenuTable will resolve to MenuTable when it hasloaded.
+ * LazyMenuTable will resolve to MenuTable when it has loaded.
  * The fallback prop is required, but you can just pass null
  * if you'd like
  */
