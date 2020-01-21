@@ -4,7 +4,20 @@ Writing modern front end web applications in React
 
 # About
 
-This workshop will go over some of the fundamentals for writing React applications
+We will be making a component that fetches data from a server, and displays it in a table. We'll also be adding the ability to sort the columns of the table.
+
+This workshop will go over some of the fundamentals for writing React applications. Specifically, it will cover
+
+1. Function Components
+2. Hooks (`useState`, `useEffect`, `useMemo`, and custom hooks)
+3. Suspense for code-splitting
+
+## Branches
+
+There are two important branches for this repo
+
+1. `master` - This is the branch you will be working on. It contains an empty component with the words "Hello, World!", and we'll be replacing this with our actual component
+2. `completed` - This is the completed version of our app in case you want to take a peek at what it will look like, or how we will implement it
 
 # Getting started
 
@@ -23,7 +36,7 @@ This workshop will go over some of the fundamentals for writing React applicatio
 1. Clone from from https://gerrit/admin/repos/react-workshop-kickoff-2020
 2. Open the folder in VS Code
 3. Press `` Ctrl+Shift+` `` to open a new terminal
-4. In the terminal, **navigate to the root of the project**, and enter the command
+4. In the terminal, enter the command
    ```
    npm install
    npx lerna bootstrap
