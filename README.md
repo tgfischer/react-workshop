@@ -33,7 +33,10 @@ There are two important branches for this repo
 
 ## Setup
 
-1. Clone from from https://gerrit/admin/repos/react-workshop-kickoff-2020
+1. Clone the repo
+   ```
+   git clone https://github.com/tgfischer/react-workshop.git
+   ```
 2. Open the folder in VS Code
 3. Press `` Ctrl+Shift+` `` to open a new terminal
 4. In the terminal, enter the command
