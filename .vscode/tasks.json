@@ -27,7 +27,7 @@
     {
       "label": "Run Server",
       "type": "shell",
-      "command": "npx serverless offline",
+      "command": "npx serverless offline --host 0.0.0.0",
       "group": "build",
       "options": {
         "cwd": "${workspaceFolder}/server"
