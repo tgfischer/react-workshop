@@ -23,13 +23,14 @@ There are two important branches for this repo
 
 ## Requirements
 
-|                Requirement | Notes                                                                      |
-| -------------------------: | -------------------------------------------------------------------------- |
-|                     NodeJS | https://nodejs.org/en                                                      |
-|                    VS Code | https://code.visualstudio.com                                              |
-|                        Git | https://git-scm.com/downloads                                              |
-|   ESLint VS Code Extension | https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint |
-| Prettier VS Code Extension | https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode |
+|                Requirement | Notes                                                                                                  |
+| -------------------------: | ------------------------------------------------------------------------------------------------------ |
+|                     NodeJS | https://nodejs.org/en                                                                                  |
+|                    VS Code | https://code.visualstudio.com                                                                          |
+|                        Git | https://git-scm.com/downloads                                                                          |
+|   ESLint VS Code Extension | https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint                             |
+| Prettier VS Code Extension | https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode                             |
+|      React Developer Tools | https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en |
 
 ## Setup
 
